@@ -25,7 +25,7 @@ gulp.task('container', function() {
 gulp.task('deploy', ['cname', 'container', 'build'], function() {
 	return gulp.src('dist/public/**/*')
 		.pipe(ghpages({
-			branch: 'wedeploy'
+			branch: 'gh-pages'
 		}));
 });
 
