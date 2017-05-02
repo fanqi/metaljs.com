@@ -8,21 +8,23 @@
 {template .soyweb}
 {call docs.layout}
 	{param content kind="html"}
-		<h1>Performance</h1>
+		<h1>性能</h1>
 
-		<p><strong>Metal.js</strong> was built from the first with performance in mind. We've run performance tests to compare it with other libraries and got really good results that show the benefits of using it.</p>
+		<p><strong>Metal.js</strong> 优先考虑性能来构建的。我们已经运行了性能测试来比较它和其他类库，并且得到了很好的结果显示使用它的好处。</p>
 
-		<p>In one of the tests we made, we built a simple list widget on three different libraries: <strong>Metal.js</strong>, <strong>YUI</strong> and <strong>React</strong>. We then measured the time it took to render those widgets with 1000 items each on three different situations:</p>
+		<p>在我们做过的其中一项测试中，我们构建了一个简单的列表微件，基于三种不同的类库：<strong>Metal.js</strong>，<strong>YUI</strong> 和 <strong>React</strong>。
+		然后我们测量了在三种不同的情况下渲染1000个项目的微件所花费的时间：
+		</p>
 
 		<ul>
-			<li><strong>First Render -</strong> Creating and rendering the list for the first time, on a blank element.</li>
-			<li><strong>Decorate -</strong> Creating and decorating a list that was previously rendered on the DOM.</li>
-			<li><strong>Update -</strong> Changing the contents of the first item of the list, causing a rerender.</li>
+			<li><strong>首次渲染 -</strong> 第一次创建和渲染列表，在空元素中</li>
+			<li><strong>装饰 -</strong> 创建和装饰一个列表，之前已经渲染在DOM中</li>
+			<li><strong>更新 -</strong> 改变列表中第一个项的内容，导致重新渲染</li>
 		</ul>
 
-		<p>The chart below shows the results we obtained on Chrome (the higher the bar, the faster it runs):</p>
+		<p>下面的图表展示了我们在Chrome上获得的结果（柱型越高，运行越快）：</p>
 
-		<img src="../images/docs/perf.png" width="400" alt="Performance Test - List">
+		<img src="../images/docs/perf.png" width="400" alt="性能测试 - 列表">
 	{/param}
 {/call}
 {/template}
