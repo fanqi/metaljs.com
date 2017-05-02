@@ -8,33 +8,24 @@
 {template .soyweb}
 {call docs.layout}
 	{param content kind="html"}
-		<h1>JSX Components</h1>
+		<h1>JSX 组件</h1>
 
 		<p>
-			For a practical tutorial on how to build components using JSX templates,
-			make sure to follow
-			the <a href="/docs/modal.html">Modal tutorial</a> section.
+			先了解关于怎样使用 JSX 模板构建组件的实用教程，请确保学过了 <a href="/docs/modal.html">模态框教程</a>。
 		</p>
 
 		<p>
-			This guide will explain some details about the integration
-			between <strong>Metal.js</strong> components
-			and <a href="https://facebook.github.io/jsx/">soy templates</a>.
+			本指南将说明 <strong>Metal.js</strong> 组件和 <a href="https://facebook.github.io/jsx/">jsx 模板</a> 之间集成的有关细节。
 		</p>
 
 		<p>
-			Note that <strong>Metal.js</strong> is template agnostic, so it's not
-			necessary to use JSX at all. That said, we already provide a very good
-			integration between metal components and JSX, so if you like using it
-			you should give it a try.
+			注意，<strong>Metal.js</strong> 与模板无关，因此它根本不需要使用 JSX。也就是说，我们已经提供了 metal 组件和 JSX 之间很好的集成，因此如果您喜欢它的话可以试一试。
 		</p>
 
 		<h2>JSXComponent</h2>
 
 		<p>
-			The only thing you need to do to use JSX in
-			your <strong>Metal.js</strong> component is to
-			extend from <strong>JSXComponent</strong>, like this:
+			要在您的 <strong>Metal.js</strong> 组件中使用JSX，您唯一要做的是从 <strong>JSXComponent</strong> 扩展，像这样：
 		</p>
 
 		<textarea class="code" data-mode="javascript">
@@ -46,12 +37,10 @@ class MyComponent extends JSXComponent {
 export default MyComponent;{/literal}
 		</textarea>
 
-		<h2><code>render</code> function</h2>
+		<h2><code>render</code> 方法</h2>
 
 		<p>
-			Now that we've extended from <strong>JSXComponent</strong> we can use jsx
-			in the <code>render</code> method to specify what our component should
-			render.
+			现在我们已经从 <strong>JSXComponent</strong> 扩展了，我们能够在 <code>render</code> 方法中使用 jsx 来指定我们的组件应该渲染什么了。
 		</p>
 
 		<textarea class="code" data-mode="javascript">
@@ -76,29 +65,20 @@ export default MyComponent;{/literal}
 		</textarea>
 
 		<p>
-			Note that your component can have two different types of
-			data: <a href="/docs/state.html">state</a> and <a href="/docs/state.html#config">config</a>.
-			The main difference is that config is accessed
-			via <code>this.config</code> and will be the original data received from
-			parent components or the constructor. State is accessed directly
-			from <code>this</code> though, like <code>this.name</code> in the previous
-			example, and can be configured to use validators, setters, initial values
-			and other features. Check out the guide
-			about <a href="/docs/state.html">state</a> to learn more about this.
+			注意组件能够有两种类型的数据： <a href="/docs/state.html">state</a> 和 <a href="/docs/state.html#config">config</a>。
+			主要的区别是：config 是通过 <code>this.config</code> 进行访问并且是从父组件或者构建函数中接收到的原始数据；
+			State 能够直接通过 <code>this</code> 访问, 像之前例子中的 <code>this.name</code>，并且能够配置验证器、设置、初始值及其他特性。
+			查看关于 <a href="/docs/state.html">state</a> 的指南了解更多。
 		</p>
 
-		<h2>Children config</h2>
+		<h2>子配置</h2>
 
 		<p>
-			Whenever content is passed inside a component's jsx tag, it will be
-			received through the <code>children</code> config property. That way the
-			component can decide if this content will be rendered at all, and where
-			exactly it should go.
+			只要内容是通过组件的 jsx 标签传递的，通过 <code>children</code> 配置数据就会接收到。这样组件就能决定内容将被渲染，或者到底应该去哪里。
 		</p>
 
 		<p>
-			For example, imagine a simple list component that receives its items as
-			its content, like this:
+			例如，想象一个简单的列表组件，可以接收它的条目作为它的内容，像这样：
 		</p>
 
 		<textarea class="code" data-mode="javascript">
@@ -110,7 +90,7 @@ export default MyComponent;{/literal}
 		</textarea>
 
 		<p>
-			This could be implemented by using the <code>children</code> config:
+			这能够通过使用 <code>children</code> 配置来实现：
 		</p>
 
 		<textarea class="code" data-mode="javascript">
@@ -122,10 +102,8 @@ export default MyComponent;{/literal}
 		</textarea>
 
 		<p>
-			If you inspect <code>this.config.children</code> you'll notice that it's
-			an array of objects. That gives you a lot of power when handling your
-			component's contents. For example, you can choose to render only part of
-			your children, like this:
+		  如果您检查 <code>this.config.children</code>，您将会注意到它是一个对象数组。
+		  这样处理组件的内容时候就很给力了。例如，您可以选择渲染 children 的一部分，像这样：
 		</p>
 
 		<textarea class="code" data-mode="javascript">
@@ -133,7 +111,7 @@ export default MyComponent;{/literal}
 return &lt;ul&gt;{this.config.children[1]}&lt;/ul&gt;{/literal}
 		</textarea>
 
-		<p>Or even change the data that they should receive before being rendered:</p>
+		<p>甚至改变在渲染之前就应该接受的数据：</p>
 
 		<textarea class="code" data-mode="javascript">
 {literal}// Forces all items to use the 'my-list-item-class' css class.
@@ -143,18 +121,14 @@ this.config.children.forEach(child => {
 return &lt;ul&gt;{this.config.children}&lt;/ul&gt;{/literal}
 		</textarea>
 
-		<h2>Functional components</h2>
+		<h2>功能性组件</h2>
 
 		<p>
-			Sometimes you'll create very simple components, that have no other behavior
-			besides rendering their own contents. In this case you can drop using
-			classes, and instead create simple functions that just render the contents
-			instead.
+			有时您会创建非常简单的组件，除了渲染自己的内容没有其他的行文。在这种情况下，您可以放弃使用类，只需要创建仅用来渲染内容的功能性组件来替代。
 		</p>
 
 		<p>
-			For example, let's create a simple <strong>Button</strong> component as
-			a function:
+			例如，让我们创建一个简单的 <strong>Button</strong> 组件当做一个功能：
 		</p>
 
 		<textarea class="code" data-mode="javascript">
@@ -168,20 +142,17 @@ var Button = ({ cssClass, label }) => {
 		</textarea>
 
 		<p>
-			You can then use it from parent components in the same way that you'd use
-			a component class, for example:
+			此外，您还可以使用组件类的方式从父组件中使用它，例如：
 		</p>
 
 		<textarea class="code" data-mode="javascript">
 {literal}&lt;Button cssClass="btn btn-primary" label="OK" /&gt;{/literal}
 		</textarea>
 
-		<h2>Rendering JSX Components</h2>
+		<h2>渲染 JSX 组件</h2>
 
 		<p>
-			JSX components can either be rendered in
-			the <a href="rendering-components.html">usual way</a>, or via
-			the <code>JSXComponent.render</code> function, like this:
+			JSX组件既能通过 <a href="rendering-components.html">常规的方式</a> 渲染，也能通过 <code>JSXComponent.render</code> 函数，像这样：
 		</p>
 
 		<textarea class="code" data-mode="javascript">
@@ -194,7 +165,7 @@ JSXComponent.render(Button, {label: 'OK'}, parent);{/literal}
 		</textarea>
 
 		<p>
-			You can also pass a functional component to it:
+			您也能传递一个功能性的组件给它：
 		</p>
 
 		<textarea class="code" data-mode="javascript">
@@ -205,24 +176,18 @@ JSXComponent.render(Button, {label: 'OK'}, parent);{/literal}
 		</textarea>
 
 		<p>
-			Or even render directly via JSX:
+			或者直接通过 JSX 渲染：
 		</p>
 
 		<textarea class="code" data-mode="javascript">
 {literal}JSXComponent.render(<Button label="OK" />, parent);{/literal}
 		</textarea>
 
-		<h2>JSX compilation</h2>
+		<h2>JSX 编译</h2>
 
 		<p>
-			For the integration
-			between <strong>Metal.js</strong> and <strong>JSX</strong> to work, the
-			JSX code needs to be compiled via a babel plugin
-			called <a href="http://npmjs.com/package/babel-plugin-incremental-dom">babel-plugin-incremental-dom</a>.
-			Using it directly means you'd need to configure it manually though, so we
-			also provide
-			a <a href="http://npmjs.com/package/babel-preset-metal-jsx">babel preset</a> that
-			you can use instead.
+		  为了使 <strong>Metal.js</strong> 和 <strong>JSX</strong> 之间的集成工作，需要通过一个叫做 <a href="http://npmjs.com/package/babel-plugin-incremental-dom">babel-plugin-incremental-dom</a> 的 babel 插件
+			来编译 JSX 代码。直接使用它意味着你需要手动配置它，因此我们也提供了 <a href="http://npmjs.com/package/babel-preset-metal-jsx">babel preset</a> 供您使用。
 		</p>
 	{/param}
 {/call}
