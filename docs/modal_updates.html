@@ -25,7 +25,7 @@ render() &lbrace;
 	&lt;/div&gt;;
 }</textarea></div></div><h2>更新 <code>close</code> 方法</h2><p>现在我们可以改变 <code>close</code> 方法来更新状态属性。</p><textarea class="code" data-mode="javascript">close() {
   this.shown = false;
-}</textarea><p>自动 <code>Metal.js</code> 使用了 <a href="http://google.github.io/incremental-dom/">增量 dom</a>， 重新渲染仅会引起最小的 dom 更新。在这个案例中， <code>shown</code> css 类将会从模态框元素中被移除。</p><h2>运行 demo</h2><p>通过 <code>npm run build</code> 编译代码，并且在浏览器中打开 demo。 点击 <strong>x</strong> 按钮将会像之前一样关闭模态框，但是检查 dom 时您会注意到它仅仅是被隐藏了，而不是从 dom 中移除。</p><h2>玩玩状态数据</h2><p>状态数据让更新组件的内容变得非常容易。如果您想快速看看它的工作，您能在浏览器的 javascript 控制台 做一些实现。</p><p>First let's hold the <code>Modal</code> instance somewhere so we can access it: 首先让我们抓住 <code>Modal</code> 实例，以便于我们能够访问到它：</p><textarea class="code" data-mode="javascript">window.modal = new metal.Modal({
+}</textarea><p>自动 <code>Metal.js</code> 使用了 <a href="http://google.github.io/incremental-dom/">增量 dom</a>， 重新渲染仅会引起最小的 dom 更新。在这个案例中， <code>shown</code> css 类将会从模态框元素中被移除。</p><h2>运行 demo</h2><p>通过 <code>npm run build</code> 编译代码，并且在浏览器中打开 demo。 点击 <strong>x</strong> 按钮将会像之前一样关闭模态框，但是检查 dom 时您会注意到它仅仅是被隐藏了，而不是从 dom 中移除。</p><h2>玩玩状态数据</h2><p>状态数据让更新组件的内容变得非常容易。如果您想快速看看它的工作，您能在浏览器的 javascript 控制台 做一些实现。</p><p>首先让我们 hold 住 <code>Modal</code> 实例，以便于我们能够访问到它：</p><textarea class="code" data-mode="javascript">window.modal = new metal.Modal({
 	header: 'My Modal',
 	body: 'Built using Metal.js'
 });</textarea><p>现在重新运行 demo，在浏览器的控制台中键入：<code>modal.shown = false</code>。 你会注意到模态框会和期望一样被隐藏。如果你再键入 <code>modal.shown = true</code>，它会再次展现出来。</p><p>如果您还想同样地将 <code>header</code> 和 <code>body</code> 变成状态属性，您所要做的是：</p><ol><li><p>将它们添加到 <code>STATE</code>，像这样：</p><textarea class="code" data-mode="javascript">Modal.STATE = {
