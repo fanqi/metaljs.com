@@ -8,61 +8,40 @@
 {template .soyweb}
 {call docs.layout}
 	{param content kind="html"}
-		<h1>Building</h1>
+		<h1>构建</h1>
 
 		<p>
-			As we mentioned before, <strong>Metal.js</strong> components are written
-			in ES6, which means that we need a transpiling process before using it on
-			a website.
+			正如之前提到的，<strong>Metal.js</strong> 组件是用 ES6 编写的，这意味着我们在网站上使用它之前需要一个转译的过程。
 		<p>
 
 		<p>
-			This can be done via any tools that you prefer,
-			like <a href="http://webpack.github.io/">webpack</a> or <a href="http://browserify.org/">browserify</a>,
-			but we've also published a few tools of our own, which focuses
-			on <strong>Metal.js</strong> projects, which we'll talk about here.
+		  这能够通过任何您喜欢的工具做到，例如 <a href="http://webpack.github.io/">webpack</a> 或者 <a href="http://browserify.org/">browserify</a>，但是我们也发布了一些我们自己的工具，更加专注于 <strong>Metal.js</strong> 项目，我们将在这里进行讨论。
 		</p>
 
 		<h2 id="gulp-metal">gulp-metal</h2>
 
 		<p>
-			What this package offers is a a bunch
-			of <a href="http://gulpjs.com/">gulp</a> tasks. There are tasks that can
-			handle not only building javascript, as well as soy compilation,
-			testing, linting and many other things.
+			这个包提供的是一堆的 <a href="http://gulpjs.com/">gulp</a> 任务。这些任务不仅可以处理构建 javascript、soy 编译、测试、验证及很多其他的事情。
 		</p>
 
 		<p>
-			The <a href="/docs/">tutorials</a> we've provided are all using it,
-			though indirectly, through some npm scripts. To learn how to
-			use <strong>gulp-metal</strong> directly take a look at
-			its <a href="http://www.npmjs.com/package/gulp-metal">npm page</a>.
+			我们提供的教程都在使用它，虽然是间接地通过一些 npm 脚本。学习如何使用 <strong>gulp-metal</strong> 可以直接看看其 <a href="http://www.npmjs.com/package/gulp-metal">npm 页面</a>。
 		</p>
 
 		<h2>metal-cli</h2>
 
 		<p>
-			If you're not a fan of <strong>gulp</strong> you can still
-			use <a href="http://www.npmjs.com/package/metal-cli">metal-cli</a>, which
-			offers almost the same tools, but through the command line.
+			如果您还不是一个 <strong>gulp</strong> 粉，您任然可以使用 <a href="http://www.npmjs.com/package/metal-cli">metal-cli</a>，它提供了几乎同样的工具，但是是通过命令行的方式。
 		</p>
 
-		<h2>Examples using other tools</h2>
+		<h2>使用其他工具的例子</h2>
 
 		<p>
-			As was mentioned before,
-			using <strong>gulp-metal</strong> or <strong>metal-cli</strong> is not
-			required. You can use your favorite build tool
-			with <strong>Metal.js</strong> as well.
+			正如之前提到的，使用 <strong>gulp-metal</strong> 或者 <strong>metal-cli</strong> 都不是必须的。您同样可以在 <strong>Metal.js</strong> 中使用您最喜欢的构建工具。
 		</p>
 
 		<p>
-			We've created a github repository full of different examples on how to work
-			with <strong>Metal.js</strong>, and among other things it has a bunch of
-			examples showing how to use different build
-			tools. <a href="http://github.com/metal/metal-examples">Check it out</a>,
-			and feel free to create an issue or send a pull request for other tools
-			that it may be missing.
+			我们已经创建了一个 github 仓库，包含了很多不同的如何使用 <strong>Metal.js</strong> 的示例。除此之外，还有一些例子展示如何使用不同的构建工具。<a href="http://github.com/metal/metal-examples">检出它</a>，随意创建一个 issue 或者发送一个pull request 提出其他可能缺失的工具。
 		</p>
 	{/param}
 {/call}

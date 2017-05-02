@@ -8,20 +8,17 @@
 {template .soyweb}
 {call docs.layout}
 	{param content kind="html"}
-		<h1>Tutorial: Modal - Testing</h1>
+		<h1>教程：模态框 - 测试</h1>
 
 		<p>
-			In the <a href="/docs/modal_nested.html">previous section</a> we've
-			completed our <strong>Modal</strong> component. The last thing we'd like
-			to show is how to use the tools that <strong>Metal.js</strong> offers to
-			help you test your code.
+			在 <a href="/docs/modal_nested.html">上一章</a> 中，我们已经完成了 <strong>模态框</strong> 组件。
+			我们想展示的最后一件事情就是怎样使用 <strong>Metal.js</strong> 提供的工具帮助您测试代码。
 		</p>
 
-		<h2>Test script</h2>
+		<h2>测试脚本</h2>
 
 		<p>
-			If you look at your <strong>package.json</strong> file you'll notice that
-			it already contains a test script that you can use:
+			如果您看 <strong>package.json</strong> 文件，您将注意到它已经包含了一个可用的测试脚本：
 		</p>
 
 		<textarea class="code" data-mode="javascript">
@@ -33,23 +30,18 @@
 		</textarea>
 
 		<p>
-			If you're building a project without the generator, you can still
-			get <strong>Metal.js</strong>'s test tools by
-			using <a href="/docs/gulp_metal.html">gulp-metal</a>.
+			如果您没有通过生成器来构建项目，也能通过使用 <a href="/docs/gulp_metal.html">gulp-metal</a> 来获取 <strong>Metal.js</strong> 的测试工具。
 		</p>
 
-		<h2>Adding a test</h2>
+		<h2>添加一个测试</h2>
 
 		<p>
-			Also note that your generated project directory also has a file
-			called <strong>test/Modal.js</strong>, with a failing assertion. As you
-			can imagine, all you need to do is add your tests to this file.
+			还要注意，您生成的项目目录中还有一个叫做 <strong>test/Modal.js</strong> 的文件，包括一个失败的断言。
+			您可以想象，您需要做的就是将您的测试添加到这个文件中。
 		</p>
 
 		<p>
-			To illustrate this let's start by replacing the existing test with one
-			that checks that the given <code>body</code> data is being rendered
-			correctly:
+			为了说明这一点，让我们来替换存在的测试，检查给定的 <code>body</code> 数据是否被正确渲染：
 		</p>
 
 		<textarea class="code" data-mode="javascript">
@@ -68,37 +60,31 @@ describe('Modal', function() {
 {/literal}
 		</textarea>
 
-		<h2>Running the tests</h2>
+		<h2>运行测试</h2>
 
 		<p>
-			To run our tests all you need to do is type <code>npm test</code> on
-			your terminal. You'll see something like this:
+		  要运行测试，需要做的是在终端中键入 <code>npm test</code>。您会看到这样的：
 		</p>
 
 		<img src="../images/docs/test.png" width="100%">
 
-		<h2>Test environment</h2>
+		<h2>测试环境</h2>
 
 		<p>
-			This test file we wrote
-			uses <a href="http://mochajs.org">Mocha</a> and <a href="http://chaijs.com/">Chai</a> for
-			describing tests, and <a href="http://karma-runner.github.io/0.12/index.html">Karma</a> as
-			the test runner. That's the default setup used by <strong>gulp-metal</strong>.
+			我们写的测试文件是用 <a href="http://mochajs.org">Mocha</a> 和 <a href="http://chaijs.com/">Chai</a> 描述的，
+			并且用 <a href="http://karma-runner.github.io/0.12/index.html">Karma</a> 作为测试运行器。
+			这些是 <strong>gulp-metal</strong> 默认安装的。
 		</p>
 
 		<p>
-			It's important to note that you don't have to
-			use <strong>gulp-metal</strong> for you tests though. It's just an easy
-			way that's already provided for you, but you can certainly setup your
-			own environment if you wish.
+			需要重点注意的是，您并不是只能使用 <strong>gulp-metal</strong> 来进行测试。
+			它只是一个已经为您准备好的简单的方法，如果您愿意，您肯定也可以安装自己的环境。
 		</p>
 
-		<h2>Next steps</h2>
+		<h2>接下来的步骤</h2>
 
 		<p>
-			You should now have a good knowledge of <strong>Metal.js</strong> basics.
-			If you want to dive into more details and advanced topics, go ahead and
-			check some of our guides.
+			您现在应该有了一个良好的 <strong>Metal.js</strong> 基础知识。如果您想深入了解更多详细信息和高级主题，请查看我们的一些指南。
 		</p>
 	{/param}
 {/call}

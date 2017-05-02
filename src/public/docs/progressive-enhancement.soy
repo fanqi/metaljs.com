@@ -8,19 +8,16 @@
 {template .soyweb}
 {call docs.layout}
 	{param content kind="html"}
-		<h1>Progressive enhancement</h1>
+		<h1>渐进增强</h1>
 
 		<p>
-			<a href="http://en.wikipedia.org/wiki/Progressive_enhancement">Progressive enhancement</a> is
-			a feature that is very important for a lot of people. Knowing about
-			this, <strong>Metal.js</strong> is prepared to deal with content that
-			already comes rendered from the server. Since metal components
-			use <a href="http://google.github.io/incremental-dom">incremental dom</a> by
-			default, rendering on an element with existing content will reuse it
-			instead of repainting everything.
+			<a href="http://en.wikipedia.org/wiki/Progressive_enhancement">渐进增强</a> 对很多人来说是一个非常重要的特性。
+			了解这一点，<strong>Metal.js</strong> 就是为处理来自服务器上需要渲染的内容准备的。
+			由于 metal 组件默认使用了 <a href="http://google.github.io/incremental-dom">增量 dom</a>，
+			因此在元素上渲染已经存在的内容将重用它，而不是重绘一切。
 		</p>
 
-		<p>It's important to note that building components with soy also helps with progressive enhancement in another way: by providing a faithful template that can be run by the server without having to duplicate the rendering code or run JavaScript at all.</p>
+		<p>重要的是要注意，用 soy 构建组件也是有助于渐进增强的另一种方式：提供了一种可靠的能够被服务器运行的模板，而无需重复地渲染代码或运行 JavaScript。</p>
 	{/param}
 {/call}
 {/template}

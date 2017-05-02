@@ -8,45 +8,34 @@
 {template .soyweb}
 {call docs.layout}
 	{param content kind="html"}
-		<h1>Tutorial: Modal - Updates</h1>
+		<h1>教程：模态框 - 更新</h1>
 
 		<p>
-			In the <a href="/docs/modal_events.html">previous section</a> we learned how to
-			add inline listeners, by making the <strong>Modal</strong>'s close button
-			work.
+			在 <a href="/docs/modal_events.html">前一章</a> 中，
+			我们学习了怎样添加内联监听器来使得 <strong>模态框</strong> 的关闭按钮工作。
 		</p>
 
 		<p>
-			We first implemented this feature by disposing of the
-			entire <strong>Modal</strong> instance when it was closed. It'd be best
-			to have the modal just hide itself so it could be shown again afterwards
-			though.
+			我们首先实现了关闭时销毁整个 <strong>模态框</strong> 实例的特性。最好的方式是仅仅让模态框隐藏，以便于之后再次展现。
 		</p>
 
-		<h2 id="state">State</h2>
+		<h2 id="state">状态</h2>
 
 		<p>
-			We've seen that it's possible to pass data to components via the
-			constructor. By default this kind of data is read-only for the component
-			though, that is, it can be received from the outside but not changed from
-			the inside.
+			我们已经看到通过构建函数传递数据给组件是可行的。不过默认情况下对于组件来说，这种数据是只读的。
+			也就是说,它可以从外面收到，但不能从里面修改。
 		</p>
 
 		<p>
-			When you need to be able to change a component's data, as well as have
-			that change cause its html contents to update, you should indicate that
-			it'll be part of the component's state.
+			当您需要改变组件的数据，以及改变会导致其 html 内容更新，您应该指出它将是组件状态的一部分。
 		</p>
 
 		<p>
-			This can be done by using your component's <code>STATE</code> static
-			variable, where you can also configure state properties, specifying
-			initial values and validators for example.
+			这可以通过使用组件的 <code>STATE</code> 静态变量来实现，其中您还可以配置状态属性，比如指定初始值和验证器。
 		</p>
 
 		<p>
-			So let's add a <code>shown</code> property to
-			our <strong>Modal</strong> state, in <strong>src/Modal.js</strong>:
+			让我们添加一个 <code>shown</code> 属性到 <strong>Modal</strong> 的状态中，在<strong>src/Modal.js</strong>：
 		</p>
 
 		<textarea class="code" data-mode="javascript">
@@ -59,15 +48,13 @@
 		</textarea>
 
 		<p>
-			For more details about configuring state, check
-			out <a href="/docs/state.html">this guide</a>.
+			多关于配置状态的细节，请查看 <a href="/docs/state.html">状态指南</a>。
 		</p>
 
-		<h2>Updating the template</h2>
+		<h2>更新模板</h2>
 
 		<p>
-			Now we need to update our template to only show the modal
-			when <code>shown</code> is true.
+			现在我们需要更新我们的模板，仅当 <code>shown</code> 是 true 时才显示模态框。
 		</p>
 
 		{call codeTabs.main}
@@ -102,11 +89,10 @@ render() &lbrace;
 			{/param}
 		{/call}
 
-		<h2>Updating the <code>close</code> function</h2>
+		<h2>更新 <code>close</code> 方法</h2>
 
 		<p>
-			Now we can change our <code>close</code> function to just update the
-			state property.
+			现在我们可以改变 <code>close</code> 方法来更新状态属性。
 		</p>
 
 		<textarea class="code" data-mode="javascript">
@@ -116,33 +102,27 @@ render() &lbrace;
 		</textarea>
 
 		<p>
-			State changes are automatically detected by <code>Metal.js</code>, causing
-			the component to be rerendered. Since <code>Metal.js</code>
-			uses <a href="http://google.github.io/incremental-dom/">incremental dom</a>,
-			rerendering will cause minimal dom updates. In this case,
-			the <code>shown</code> css class will be removed from the modal element.
+			自动 <code>Metal.js</code> 使用了 <a href="http://google.github.io/incremental-dom/">增量 dom</a>，
+			重新渲染仅会引起最小的 dom 更新。在这个案例中， <code>shown</code> css 类将会从模态框元素中被移除。
 		</p>
 
-		<h2>Run the demo</h2>
+		<h2>运行 demo</h2>
 
 		<p>
-			Now compile your code with <code>npm run build</code> and open the demo
-			on a browser. Clicking the <strong>x</strong> button will close the modal
-			as before, but inspecting the dom you'll notice that it's just hidden,
-			not removed from the dom.
+			通过 <code>npm run build</code> 编译代码，并且在浏览器中打开 demo。
+			点击 <strong>x</strong> 按钮将会像之前一样关闭模态框，但是检查 dom 时您会注意到它仅仅是被隐藏了，而不是从 dom 中移除。
 		</p>
 
-		<h2>Playing with state data</h2>
+		<h2>玩玩状态数据</h2>
 
 		<p>
-			State data makes it very easy to update a component's contents. If you
-			want to quickly see it working you can make some experiments on your
-			browser's javascript console for example.
+			状态数据让更新组件的内容变得非常容易。如果您想快速看看它的工作，您能在浏览器的 javascript 控制台 做一些实现。
 		</p>
 
 		<p>
 			First let's hold the <code>Modal</code> instance somewhere so we can
 			access it:
+			首先让我们抓住 <code>Modal</code> 实例，以便于我们能够访问到它：
 		</p>
 
 		<textarea class="code" data-mode="javascript">
@@ -153,21 +133,18 @@ render() &lbrace;
 		</textarea>
 
 		<p>
-			Now run the demo again, go to the browser's console and
-			type: <code>modal.shown = false</code>. You'll notice that the modal will
-			be hidden as expected. If you now type <code>modal.shown = true</code>, it
-			will show up again.
+			现在重新运行 demo，在浏览器的控制台中键入：<code>modal.shown = false</code>。
+			你会注意到模态框会和期望一样被隐藏。如果你再键入 <code>modal.shown = true</code>，它会再次展现出来。
 		</p>
 
 		<p>
-			If you want you can also turn <code>header</code> and <code>body</code> into
-			state properties as well. All you have to do is:
+			如果您还想同样地将 <code>header</code> 和 <code>body</code> 变成状态属性，您所要做的是：
 		</p>
 
 		<ol>
 			<li>
 				<p>
-					Add them to <code>STATE</code>, like this:
+					将它们添加到 <code>STATE</code>，像这样：
 				</p>
 
 				<textarea class="code" data-mode="javascript">
@@ -186,9 +163,7 @@ render() &lbrace;
 			</li>
 			<li>
 				<p>
-					If you're using JSX templates, change the calls
-					to <code>this.config</code> to call directly
-					from <code>this</code> instead, like this:
+					如果你正在使用JSX模板，将调用 <code>this.config</code> 变为直接从 <code>this</code> 中调用，像这样：
 				</p>
 				<textarea class="code" data-mode="javascript">
 {literal}render() &lbrace;
@@ -220,19 +195,16 @@ render() &lbrace;
 		</ol>
 
 		<p>
-			Now if you type something like <code>modal.header = 'New Header'</code> on
-			the console, the contents will also be updated automatically.
+			现在，你如果在控制台中输入 <code>modal.header = 'New Header'</code> 之类的代码，内容也会自动更新。
 		</p>
 
-		<h2>Next steps</h2>
+		<h2>接下来的步骤</h2>
 
 		<p>
-			Our modal is working as expected now. But what if you want to split it
-			into multiple components? How would we use them together? Check it out in
-			the next section.
+			我们的模态框正按预期工作。但是如果您想把它拆分成多个组件呢？我们如何一起使用它们？请在下一章中查看。
 		</p>
 
-		<p><strong><a href="/docs/modal_nested.html">↪ Tutorial: Modal - Nested Components</a></strong></p>
+		<p><strong><a href="/docs/modal_nested.html">↪ 教程：模态框 - 嵌套组件</a></strong></p>
 
 	{/param}
 {/call}
