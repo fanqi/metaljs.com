@@ -8,42 +8,37 @@
 {template .soyweb}
 {call docs.layout}
 	{param content kind="html"}
-		<h1>Yeoman generator</h1>
+		<h1>Yeoman 生成器</h1>
 
 		<p>
-			You can organize your <strong>Metal.js</strong> project in any way you
-			want, but to start out we recommend using
-			the <a href="http://npmjs.com/package/generator-metal">Yeoman generator</a> we've
-			created, which prepares both the project structure as well as a basic
-			development workflow for you.
+			您可以使用任何您想用的方式组织您的 <strong>Metal.js</strong> 项目，但是刚开始我们建议使用我们创造的 <a href="http://npmjs.com/package/generator-metal">Yeoman 生成器</a>，它为您准备了项目结构和基础的开发工作流程。
 		</p>
 
-		<p>To use it:</p>
+		<p>使用它：</p>
 
 		<ol>
 			<li>
 				<p>
-					Install <a href="https://nodejs.org">NPM</a> v3.0.0 or newer (if you
-					don't have it yet)
+					安装 <a href="https://nodejs.org">NPM</a> v3.0.0 或者更新的 （如果您还没有）
 				</p>
 			</li>
 			<li>
-				<p>Install <strong>Yeoman</strong> and <strong>generator-metal</strong>:</p>
+				<p>安装 <strong>Yeoman</strong> 和 <strong>generator-metal</strong>：</p>
 				<p><code>[sudo] npm i -g yo generator-metal</code></p>
 			</li>
 			<li>
 				<p>
-					Open the folder that you want to use on your terminal and type: <code>yo metal</code>
+					在您的终端中打开您想用的文件夹，并键入：<code>yo metal</code>
 				</p>
 			</li>
 			<li>
-				<p>Answer the generator prompts:</p>
+				<p>回答生成器的提示：</p>
 				<img src="../images/docs/prompts.png" width="500"><br>
 			</li>
-			<li><p>Wait for the generator to finish fetching dependencies</p></li>
+			<li><p>等待生成器完成依赖的获取</p></li>
 		</ol>
 
-		<p>After those steps you'll get a directory tree similar to this:</p>
+		<p>这些步骤后你会得到一个类似的目录树：</p>
 
 		<textarea class="code" data-mode="javascript">{literal}└── metal-modal
     ├── demos
@@ -58,15 +53,11 @@
         └── Modal.js{/literal}</textarea>
 
 		<p>
-			<strong>generator-metal</strong> will already include some npm scripts
-			to help you build and test your code, as well as many gulp tasks
-			via <a href="/docs/building.html#gulp-metal">gulp-metal</a>.
+			<strong>generator-metal</strong> 已经包括了一些 npm 脚本帮助您构建和测试代码，同时也有很多 <a href="/docs/building.html#gulp-metal">gulp-metal</a> 提供了 gulp 任务。
 		</p>
 
 		<p>
-			By the way, the boilerplate zip provided by
-			the <a href="/docs/#boilerplate">getting started guide</a> was created
-			using <strong>generator-metal</strong>.
+			顺便说一下，<a href="/docs/#boilerplate">准备开始指南</a> 提供的样板 zip 包就是使用 <strong>generator-metal</strong> 创建的。
 		</p>
 	{/param}
 {/call}
