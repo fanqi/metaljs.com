@@ -8,24 +8,20 @@
 {template .soyweb}
 {call docs.layout}
 	{param content kind="html"}
-		<h1>Nested Components</h1>
+		<h1>嵌套组件</h1>
 
 		<p>
-			The ability to reference components inside templates can be very useful.
-			It enables the developer to correctly place the child component at the
-			right position inside the parent in an intuitive way.
+			引用组件里面的模板的能力是非常有用的，能够使开发者用一种直接的方式正确地将子组件放置在父组件中对的位置。
 		</p>
 
 		<p>
-			This can certainly be done with <strong>Metal.js</strong> components. For
-			example, let's say we've already built a simple component
-			called <strong>Button</strong>.
+			<strong>Metal.js</strong> 组件当然能这么做。
+			例如，我们已经构建了一个被 <strong>Button</strong> 调用的简单组件。
 		</p>
 
 		<p>
-			Now we're building a <strong>Modal</strong> component, and we want it to
-			render some buttons inside the footer. In <strong>Modal</strong>'s
-			template file we could do the following:
+			现在我们正在构建一个 <strong>模态框</strong> 组件，并且我们想它在页脚渲染一些按钮。
+			在 <strong>模态框</strong> 的模板文件我们能这么做：
 		</p>
 
 		{call codeTabs.main}
@@ -50,17 +46,13 @@ return &lt;div class="footer"&gt;{buttons}&lt;/div&gt;;{/literal}
 		{/call}
 
 		<p>
-			When Modal is rendered, the buttons also will be, at the specified
-			position. Besides this, <strong>Button</strong> components will be
-			automatically instantiated for these elements.
+			当模态框被渲染时，这些按钮也会被渲染在指定的位置。除此之外，<strong>按钮</strong> 组件也会被自动实例化。
 		</p>
 
-		<h2>Accessing sub component instances</h2>
+		<h2>访问子组件实例</h2>
 
 		<p>
-			But what if we need to access the created instances? That's possible by
-			using <strong>ref</strong>. Let's add one to the previous example and see
-			what happens:
+			但是我们需要访问已创建的示例呢？使用 <strong>ref</strong> 是可能的。让我来添加一个到之前的例子看看会发生什么：
 		</p>
 
 		{call codeTabs.main}
@@ -83,8 +75,7 @@ return &lt;div class="footer"&gt;{buttons}&lt;/div&gt;;{/literal}
 		{/call}
 
 		<p>
-			Now you'll be able to access your sub components through
-			your instance's <code>components</code> property, like this:
+			现在您将能够访问您的子组件通过您实例的 <code>components</code> 属性，如下：
 		</p>
 
 		<textarea class="code" data-mode="javascript">{literal}
