@@ -8,18 +8,20 @@
 {template .soyweb}
 {call docs.layout}
 	{param content kind="html"}
-		<h1>Alias</h1>
+		<h1>别名</h1>
 
-		<p>A straightforward way to import npm dependencies into your module is to use their relative paths, like we do for any other code. For example:</p>
+		<p>导入 npm 依赖到您的模块中简单直接的方法是使用它们的相对路径，就像我们为其他代码做所的一样。例如：</p>
 
 		<textarea class="code" data-mode="javascript">{literal}
 import core from '../node_modules/metal/src/core';{/literal}</textarea>
 
-		<p>Having to supply the relative path to node_modules is not cool though and, besides that, it may cause problems when a module doing that is imported later as an npm dependency of another project, since the paths will change.</p>
+		<p>提供 node_modules 的相对路径并不是很酷，除此之外，当模块做为另一个项目的 npm 依赖性导入时可能会导致问题，因为路径会改变。</p>
 
-		<p>Knowing that, Metal.js allows importing npm dependencies like you would from a regular node module, just by referencing their names. Note that this will only work when using Metal.js's <a href="/docs/building.html">build tools</a> or adding a similar logic to your build process yourself (though we provide a <a href="https://npmjs.com/package/babel-preset-metal">babel preset</a> with this logic that you can use separately too).</p>
+		<p>我们知道，Metal.js 允许像常规 node 模块一样来导入 npm 依赖，仅仅引用它们的名称即可。
+		注意，只用在使用 Metal.js 的 <a href="/docs/building.html">构建工具</a> 时才能工作，
+		或者添加了一个类似的逻辑到您自己的构建过程中（还有我们提供的 <a href="https://npmjs.com/package/babel-preset-metal">babel preset</a> 预设有这个逻辑，您可以单独使用）。</p>
 
-		<p>With aliases, the previous example can be rewritten like this:</p>
+		<p>使用别名，上面的示例可以这样重写：</p>
 
 		<textarea class="code" data-mode="javascript">import core from 'metal';</textarea>
 	{/param}
