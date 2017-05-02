@@ -8,22 +8,16 @@
 {template .soyweb}
 {call docs.layout}
 	{param content kind="html"}
-		<h1>Rendering Components</h1>
+		<h1>渲染组件</h1>
 
 		<p>
-			The <a href="/docs">quick start tutorial</a> explains how to create and
-			render a new component. In its examples components are always being
-			appened directly to the document's body though, but what's usually
-			necessary is to render in a specific position.
+			<a href="/docs">快速开始教程</a> 已经解释了如何创建和渲染一个新的组件。然而在示例中组件都是被直接追加到文档的body中，但通常需要的是在一个特定的位置呈现。
 		</p>
 
-		<h2>Replacing an existing element</h2>
+		<h2>替换存在的元素</h2>
 
 		<p>
-			If you wish your component to replace an existing element on the dom,
-			you just need to pass it (or a selector for it) as
-			the <strong>element</strong> property of the constructor configuration,
-			like this:
+			如果您希望您的组件替换dom中的现有的元素，你只需要把它(或它的选择器)作为构造函数的 <strong>element</strong> 属性配置，如下：
 		</p>
 
 		<textarea class="code" data-mode="javascript">
@@ -35,11 +29,10 @@ new Modal({element: '#elementToReplace'});
 {/literal}
 		</textarea>
 
-		<h2>Specifying the parent</h2>
+		<h2>指定父级</h2>
 
 		<p>
-			You can also specify the parent element that should receive the
-			component's contents via the second constructor param, like this:
+			您也能通过第二个构造函数参数指定需要接收组件的内容的父级元素，如下：
 		</p>
 
 		<textarea class="code" data-mode="javascript">
