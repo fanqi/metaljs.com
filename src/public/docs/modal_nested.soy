@@ -8,25 +8,21 @@
 {template .soyweb}
 {call docs.layout}
 	{param content kind="html"}
-		<h1>Tutorial: Modal - Nested Components</h1>
+		<h1>教程：模态框 - 嵌套组件</h1>
 
 		<p>
-			In the <a href="/docs/modal_updates.html">previous section</a> we finished
-			working on our component's behavior.
+			在 <a href="/docs/modal_updates.html">上一章</a>中，我们已经处理完了组件的行为。
 		</p>
 
 		<p>
-			But what if our <strong>Modal</strong> header's markup was very similar to
-			one that is used in other places though? Ideally we'd move it into a
-			separate component that can be reused. That's what we'll be doing in this
-			section.
+			但是如果 <strong>模态框</strong> 头部的标记和在其他地方使用的非常相似呢？
+			理想情况下，我们可以将它移动到单独的组件以便于重用。这就是我们将在这章做的。
 		</p>
 
-		<h2>Creating <strong>CloseHeader</strong></h2>
+		<h2>创建 <strong>CloseHeader</strong></h2>
 
 		<p>
-			First let's create the new component. Add
-			a <strong>src/CloseHeader.js</strong> file to your project:
+			首先让我们来创建新的组件。添加一个 <strong>src/CloseHeader.js</strong> 文件到项目中：
 		</p>
 
 		{call codeTabs.main}
@@ -55,8 +51,7 @@ export default CloseHeader;{/literal}
 		{/call}
 
 		<p>
-			Now let's prepare the template to be similar to the one used
-			by <strong>Modal</strong>:
+			现在我们准备一个类似于所使用的 <strong>Modal</strong> 的模板：
 		</p>
 
 		{call codeTabs.main}
@@ -92,14 +87,12 @@ export default CloseHeader;{/literal}
 			{/param}
 		{/call}
 
-		<p>Done! Our new component is ready to be used by <strong>Modal</strong>.</p>
+		<p>搞定！我们的新组件已经准备好被 <strong>模态框</strong> 使用了。</p>
 
-		<h2>Using <strong>CloseHeader</strong></h2>
+		<h2>使用 <strong>CloseHeader</strong></h2>
 
 		<p>
-			All we have to do is to replace the header markup
-			from <strong>Modal</strong>'s template with a call
-			to <strong>CloseHeader</strong>:
+			我们所需要做的就是通过调用 <strong>CloseHeader</strong> 替换模态框模板的头部标记：
 		</p>
 
 		{call codeTabs.main}
@@ -161,20 +154,17 @@ export default CloseHeader;{/literal}
 		{/call}
 
 		<p>
-			This will not only render <strong>CloseHeader</strong> at the right
-			position, but also instantiate it for you. For more details on nested
-			components, check out
-			the <a href="/docs/nested-components.html">guide about it</a>.
+			这不仅仅会在正确的位置呈现 <strong>CloseHeader</strong>，也会实例化。
+			关于嵌套组件的更多细节，请查看 <a href="/docs/nested-components.html">关于它的指南</a>。
 		</p>
 
-		<h2>Next steps</h2>
+		<h2>接下来的步骤</h2>
 
 		<p>
-			Now that we have learned how to properly create a new component, it'd
-			good to also know how to test it. The next section will focus on that.
+			现在我们已经学习了怎样正确地创建一个新的组件，还需要知道怎样测试它。下一章将重点关注这个。
 		</p>
 
-		<p><strong><a href="/docs/modal_testing.html">↪ Tutorial: Modal - Testing</a></strong></p>
+		<p><strong><a href="/docs/modal_testing.html">↪ 教程：模态框 - 测试</a></strong></p>
 	{/param}
 {/call}
 {/template}
