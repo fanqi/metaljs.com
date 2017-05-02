@@ -8,24 +8,21 @@
 {template .soyweb}
 {call docs.layout}
 	{param content kind="html"}
-		<h1>Tutorial: Modal - Events</h1>
+		<h1>教程：模态框 - 事件</h1>
 
 		<p>
-			In the <a href="/docs/modal.html">previous section</a> we've created a
-			component that renders a <strong>Modal</strong>. Its close button doesn't
-			do anything yet though. This section will teach you how to handle dom
-			events on your components.
+			在 <a href="/docs/modal.html">上一章</a> 中我们已经创建了一个呈现模态框的组件，
+			但是它的关闭按钮不能做任何事。这一章中将教您怎样在组件中处理dom事件。
 		</p>
 
 		{call docsInlineEvents.functionName /}
 
 		{call docsInlineEvents.functionReference /}
 
-		<h2>Listener implementation</h2>
+		<h2>监听器的实现</h2>
 
 		<p>
-			All you need to do now is to implement the <code>close</code> function in
-			your <strong>src/Modal.js</strong> file:
+			现在需要做的是在 <strong>src/Modal.js</strong> 文件中实现 <code>close</code> 方法：
 		</p>
 
 		<textarea class="code" data-mode="javascript">
@@ -35,39 +32,32 @@
 		</textarea>
 
 		<p>
-			All components have this <code>dispose</code> function, which basically
-			destroys it and removes its content from the dom. Check the guide
-			about <a href="/docs/component-lifecycle.html">lifecycle functions</a> for
-			more details.
+			所有的组件都有 <code>dispose</code> 方法，主要用于从dom中销毁和移除组件内容。
+			想了解更多详细信息，请查看关于 <a href="/docs/component-lifecycle.html">生命周期函数</a> 的指南。
 		</p>
 
-		<h2>Run the demo</h2>
+		<h2>运行 demo</h2>
 
 		<p>
-			Now compile your code with <code>npm run build</code> and open the demo
-			on a browser. Clicking the <strong>x</strong> button will close the modal
-			as expected.
+			现在使用 <code>npm run build</code> 编译代码，并且打开浏览器中打开 demo。点击 <strong>x</strong> 按钮将如期望一样关闭模态框。
 		</p>
 
 		<p>
-			For more details on inline listeners check <a href="/docs/inline-events.html">this guide</a>.
+			想了解更多关于内联监听器的信息请查看这个 <a href="/docs/inline-events.html">指南</a>。
 		</p>
 
-		<h2>Next steps</h2>
+		<h2>接下来的步骤</h2>
 
 		<p>
-			Our modal now properly closes itself when the <strong>x</strong> button is
-			clicked. To do this we're disposing of it completely though, so we'll need
-			to create a new Modal instance whenever we need to show it again.
+			当点击 <strong>x</strong> 按钮时，模态框已经可以正常关闭了。
+			不过为了完全地处理它，每当我们需要再展示时，需要创建一个新模态框实例。
 		</p>
 
 		<p>
-			Ideally, instead of disposing it, we should just hide it instead, while
-			also having a way to show it back. The next section will explain how to do
-			this by having data changes update the modal accordingly.
+			理想情况下，我们应该仅仅隐藏模态框，而不是销毁，这样还有方法展示回来。下一章将解释怎样在有数据变化时相应地更新模态框。
 		</p>
 
-		<p><strong><a href="/docs/modal_updates.html">↪ Tutorial: Modal - Updates</a></strong></p>
+		<p><strong><a href="/docs/modal_updates.html">↪ 教程：模态框 - 更新</a></strong></p>
 	{/param}
 {/call}
 {/template}
